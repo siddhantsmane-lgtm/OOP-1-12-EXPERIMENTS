@@ -1,0 +1,96 @@
+3.1
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+class Book {
+    public:
+    string book_name;
+    string book_author;
+    int price;
+
+    void accept() {
+        cout<<"Enter Book Name: ";
+        cin>>book_name;
+        cout<<"Enter Book Author: ";
+        cin>>book_author;
+        cout<<"Enter Price: ";
+        cin>>price;
+
+    }
+    void display() {
+        cout<<"Book Name: "<<book_name<<endl;
+        cout<<"Book Author: "<<book_author<<endl;
+        cout<<"Price: "<<price<<endl;
+    }
+
+
+};
+
+int main() {
+    Book b;
+    Book *p;
+    p=&b;
+    p->accept();
+    p->display();
+}
+
+3.2
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+class student {
+    public:
+    int rollno;
+    int percentage;
+
+    void accept() {
+        cout << "Enter Roll No: ";
+        cin >> this->rollno;
+        cout << "Enter Percentage: ";
+        cin >> this->percentage;
+    }
+    void display() {
+        this->accept();
+        cout<<"the roll no of the student is"<<this->rollno;
+        cout<<"the percentage of the student is"<<this->percentage;
+    }
+
+};
+int main() {
+    student s;
+    s.display();
+}
+
+3.3
+
+#include <iostream>
+using namespace std;
+
+class Outer {
+public:
+    void display() {
+        cout << "This is the Outer class" << endl;
+    }
+
+    // Nested class
+    class Inner {
+    public:
+        void show() {
+            cout << "This is the Inner (Nested) class" << endl;
+        }
+    };
+};
+
+int main() {
+   
+    Outer obj;
+    obj.display();
+
+    
+    Outer::Inner obj2;
+    obj2.show();
+
+    return 0;
+}
