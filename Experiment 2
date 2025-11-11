@@ -1,0 +1,125 @@
+2.1
+
+#include <iostream>
+using namespace std;
+
+class City {
+public:
+    string name;
+    long population;
+
+public:
+    void getData() {
+        cout << "Enter city name: ";
+        cin >> name;
+        cout << "Enter population: ";
+        cin >> population;
+    }
+
+
+};
+
+int main() {
+    City c[5];
+    int i;
+    int max=0;
+
+    cout << "Enter data for 5 cities:\n";
+    for (int i = 0; i < 5; i++) {
+        c[i].getData();
+    }
+    for (int i=0;i<5;i++) {
+        if (c[i].population > c[max].population) {
+            max = i;
+        }
+    }
+
+
+
+
+    cout << "\nCity with highest population: " << c[max].name << endl;
+    return 0;
+}
+
+2.2
+
+#include <iostream>
+using namespace std;
+
+class Account {
+public:
+    int accNo;
+    float balance;
+
+    void getData() {
+        cout << "Enter Account Number: ";
+        cin >> accNo;
+        cout << "Enter Balance: ";
+        cin >> balance;
+    }
+
+    void addInterest() {
+        if (balance >= 5000)
+            balance += balance * 0.10;  // Add 10% interest
+    }
+
+    void display() {
+        cout << "Account No: " << accNo << "  Balance: " << balance << endl;
+    }
+};
+
+int main() {
+    Account a[10];
+
+    cout << "Enter data for 10 accounts:\n";
+    for (int i = 0; i < 10; i++) {
+        a[i].getData();
+        a[i].addInterest();
+    }
+
+    cout << "\nAccounts after adding 10% interest (if balance >= 5000):\n";
+    for (int i = 0; i < 10; i++) {
+        a[i].display();
+    }
+
+    return 0;
+}
+
+2.3
+
+#include <iostream>
+using namespace std;
+
+class Staff {
+public:
+    string name;
+    string post;
+
+    void getData() {
+        cout << "Enter Staff Name: ";
+        cin >> name;
+        cout << "Enter Post: ";
+        cin >> post;
+    }
+
+    void displayIfHOD() {
+        if (post == "HOD" || post == "hod" || post == "Hod")
+            cout << "Name of HOD: " << name << endl;
+    }
+};
+
+int main() {
+    Staff s[5];
+
+    cout << "Enter data for 5 staff members:\n";
+    for (int i = 0; i < 5; i++) {
+        s[i].getData();
+    }
+
+    cout << "\nStaff members who are HOD:\n";
+    for (int i = 0; i < 5; i++) {
+        s[i].displayIfHOD();
+    }
+
+    return 0;
+}
