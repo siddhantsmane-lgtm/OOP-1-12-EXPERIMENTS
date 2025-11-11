@@ -1,0 +1,38 @@
+11.1
+
+#include<iostream>
+#include<vector>
+#include<cctype>
+using namespace std;
+int main(){
+    vector<int> vec(5);
+    int i;
+    cout<<"Enter vector 5 elements:";
+    for ( i = 0; i < 5; i++){
+        cin>>vec[i];
+    }
+    cout<<endl;
+    cout<<"Vector elements are:"<<endl;
+for ( i = 0; i < 5; i++){
+        cout<<vec[i]<<endl;
+    }
+cout<<"Modified elements are:";
+    for ( i = 0; i < 5; i++){
+    vec[i]=vec[i]+i*2;
+    }
+    for ( i = 0; i < 5; i++){
+       cout<<vec[i]<<" ";
+    }
+    cout<<endl;
+      int scalar;
+    cout << "Enter a scalar value to multiply: ";
+    cin >> scalar;
+
+    cout << "After multiplying by scalar: ";
+    for (i = 0; i < 5; i++)
+        vec[i] = vec[i] * scalar;
+
+    for (i = 0; i < 5; i++)
+        cout << vec[i] << " ";
+        cout<<endl;
+}
