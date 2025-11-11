@@ -1,0 +1,112 @@
+1.1
+
+#include <iostream>
+using namespace std;
+
+class student {
+    int roll_no;
+    string name;
+    string class_name;  
+public:
+    void accept() {
+        cout << "Enter Roll Number: ";
+        cin >> roll_no;
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Class: ";
+        cin >> class_name;
+    }
+
+    void display() {
+        cout << "\n--- Student Details ---\n";
+        cout << "Roll Number: " << roll_no << endl;
+        cout << "Name: " << name << endl;
+        cout << "Class: " << class_name << endl;
+    }
+};
+
+int main() {
+    student s;
+    s.accept();
+    s.display();
+    return 0;
+}
+
+
+1.2
+
+#include <iostream>
+using namespace std;
+
+class Book {
+public:
+    string book_name;
+    float price;
+    int pages;
+
+public:
+    void accept() {
+        cout << "Enter Book Name: ";
+        cin >> book_name;
+        cout << "Enter Price: ";
+        cin >> price;
+        cout << "Enter Number of Pages: ";
+        cin >> pages;
+    }
+
+
+};
+
+int main() {
+    Book b1, b2;
+
+    cout << "Enter details of Book 1:\n";
+    b1.accept();
+
+    cout << "\nEnter details of Book 2:\n";
+    b2.accept();
+
+    cout << "\n--- Result ---\n";
+    if (b1.price > b2.price)
+        cout << "Book with greater price: " << b1.book_name << endl;
+    else if (b2.price > b1.price)
+        cout << "Book with greater price: " << b2.book_name << endl;
+    else
+        cout << "Both books have the same price." << endl;
+
+    return 0;
+}
+
+1.3
+
+#include <iostream>
+using namespace std;
+
+class student {
+    int roll_no;
+    string name;
+    string class_name;  
+public:
+    void accept() {
+        cout << "Enter Roll Number: ";
+        cin >> roll_no;
+        cout << "Enter Name: ";
+        cin >> name;
+        cout << "Enter Class: ";
+        cin >> class_name;
+    }
+
+    void display() {
+        cout << "\n--- Student Details ---\n";
+        cout << "Roll Number: " << roll_no << endl;
+        cout << "Name: " << name << endl;
+        cout << "Class: " << class_name << endl;
+    }
+};
+
+int main() {
+    student s;
+    s.accept();
+    s.display();
+    return 0;
+}
