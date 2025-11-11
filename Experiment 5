@@ -1,0 +1,145 @@
+5.1
+
+#include <iostream>
+using namespace std;
+
+class Sum {
+private:
+    int n, total;
+public:
+    Sum(int num) {
+        n = num;
+        total = 0;
+        for(int i = 1; i <= n; i++)
+            total += i;
+    }
+
+    void display() {
+        cout << "Sum of numbers from 1 to " << n << " = " << total << endl;
+    }
+};
+
+int main() {
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    Sum obj(n);
+    obj.display();
+    return 0;
+}
+
+5.2
+
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    string name;
+    float percentage;
+public:
+    Student(string n, float p) {
+        name = n;
+        percentage = p;
+    }
+
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Percentage: " << percentage << "%" << endl;
+    }
+};
+
+int main() {
+    string name;
+    float per;
+
+    cout << "Enter student name: ";
+    getline(cin, name);
+
+    cout << "Enter percentage: ";
+    cin >> per;
+
+    Student s(name, per);
+    s.display();
+
+    return 0;
+}
+
+5.3
+
+#include <iostream>
+using namespace std;
+
+class College {
+private:
+    int roll_no;
+    string name;
+    string course;
+public:
+    College(int r, string n, string c = "Computer Engineering") {
+        roll_no = r;
+        name = n;
+        course = c;
+    }
+
+    void display() {
+        cout << "Roll No: " << roll_no << endl;
+        cout << "Name: " << name << endl;
+        cout << "Course: " << course << endl << endl;
+    }
+};
+
+int main() {
+    College s1(101, "Amit");
+    College s2(102, "Riya", "Information Technology");
+
+    s1.display();
+    s2.display();
+
+    return 0;
+}
+
+5.4
+
+#include <iostream>
+using namespace std;
+
+class Demo {
+private:
+    int a, b;
+public:
+  
+    Demo() {
+        a = 0;
+        b = 0;
+    }
+
+   
+    Demo(int x, int y) {
+        a = x;
+        b = y;
+    }
+
+  
+    Demo(int x) {
+        a = x;
+        b = 0;
+    }
+
+    void display() {
+        cout << "a = " << a << ", b = " << b << endl;
+    }
+};
+
+int main() {
+    Demo obj1;
+    Demo obj2(10, 20);
+    Demo obj3(50);
+
+    obj1.display();
+    obj2.display();
+    obj3.display();
+
+    return 0;
+}
