@@ -1,0 +1,194 @@
+4.1
+
+#include <iostream>
+using namespace std;
+
+class SwapNumbers {
+public:
+    int a, b;
+
+    void getValues() {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+    }
+
+    void swapValues(SwapNumbers obj) {
+        int temp = obj.a;
+        obj.a = obj.b;
+        obj.b = temp;
+        cout << "After Swap: a = " << obj.a << ", b = " << obj.b << endl;
+    }
+};
+
+int main() {
+    SwapNumbers s;
+    s.getValues();
+    s.swapValues(s);
+    return 0;
+}
+
+4.2
+
+#include <iostream>
+using namespace std;
+
+class SwapNumbers {
+private:
+    int a, b;
+
+public:
+    void getValues() {
+        cout << "Enter two numbers: ";
+        cin >> a >> b;
+    }
+
+    friend void swapValues(SwapNumbers &s);
+};
+
+void swapValues(SwapNumbers &s) {
+    int temp = s.a;
+    s.a = s.b;
+    s.b = temp;
+    cout << "After Swap: a = " << s.a << ", b = " << s.b << endl;
+}
+
+int main() {
+    SwapNumbers s;
+    s.getValues();
+    swapValues(s);
+    return 0;
+}
+
+4.3
+
+#include <iostream>
+using namespace std;
+
+class B; 
+
+class A {
+private:
+    int x;
+public:
+    void getData() {
+        cout << "Enter value of x: ";
+        cin >> x;
+    }
+    friend void swapValues(A &, B &);
+};
+
+class B {
+private:
+    int y;
+public:
+    void getData() {
+        cout << "Enter value of y: ";
+        cin >> y;
+    }
+    friend void swapValues(A &, B &);
+};
+
+void swapValues(A &a, B &b) {
+    int temp = a.x;
+    a.x = b.y;
+    b.y = temp;
+
+    cout << "After Swap: x = " << a.x << ", y = " << b.y << endl;
+}
+
+int main() {
+    A obj1;
+    B obj2;
+    obj1.getData();
+    obj2.getData();
+    swapValues(obj1, obj2);
+    return 0;
+}
+
+4.4
+
+#include <iostream>
+using namespace std;
+
+class Result2; // forward declaration
+
+class Result1 {
+private:
+    int marks1;
+public:
+    void getMarks() {
+        cout << "Enter marks for Result1: ";
+        cin >> marks1;
+    }
+    friend void average(Result1, Result2);
+};
+
+class Result2 {
+private:
+    int marks2;
+public:
+    void getMarks() {
+        cout << "Enter marks for Result2: ";
+        cin >> marks2;
+    }
+    friend void average(Result1, Result2);
+};
+
+void average(Result1 r1, Result2 r2) {
+    float avg = (r1.marks1 + r2.marks2) / 2.0;
+    cout << "Average Marks = " << avg << endl;
+}
+
+int main() {
+    Result1 r1;
+    Result2 r2;
+    r1.getMarks();
+    r2.getMarks();
+    average(r1, r2);
+    return 0;
+}
+
+4.5
+
+#include <iostream>
+using namespace std;
+
+class B;
+
+class A {
+private:
+    int x;
+public:
+    void getData() {
+        cout << "Enter value of x: ";
+        cin >> x;
+    }
+    friend void greatest(A, B);
+};
+
+class B {
+private:
+    int y;
+public:
+    void getData() {
+        cout << "Enter value of y: ";
+        cin >> y;
+    }
+    friend void greatest(A, B);
+};
+
+void greatest(A a, B b) {
+    if (a.x > b.y)
+        cout << "Greatest number = " << a.x;
+    else
+        cout << "Greatest number = " << b.y;
+}
+
+int main() {
+    A obj1;
+    B obj2;
+    obj1.getData();
+    obj2.getData();
+    greatest(obj1, obj2);
+    return 0;
+}
